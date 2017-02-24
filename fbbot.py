@@ -11,7 +11,7 @@ myEmail = 'myFB@email.net'
 myPass = 'myFBpassword'
 
 # search for friend string, must not contain the whole name
-myFriend = 'myFB frie'.decode("utf-8")
+myFriend = 'Sveta Goldstein'.decode("utf-8")
 myMsg = 'hello world'
 
 # start driver
@@ -40,6 +40,7 @@ def getEl(cssSelector):
 	return el
 
 # write message into non-input element
+actions = ActionChains(driver)
 def writeMsg2el(msg, cssSelector):
 	actions.move_to_element(driver.find_element_by_css_selector(cssSelector)).send_keys(msg).key_down(Keys.RETURN).key_up(Keys.RETURN).perform()
 
@@ -63,6 +64,5 @@ print 'ready to message'
 
 # write friend
 getEl('._1mf').click()
-actions = ActionChains(driver)
 writeMsg2el(myMsg, '._1mf')
 print 'message written'
