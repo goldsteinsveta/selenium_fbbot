@@ -39,7 +39,7 @@ def getEl(cssSelector):
 			getEl = True
 	return el
 
-# write message into not-inut element
+# write message into non-input element
 def writeMsg2el(msg, cssSelector):
 	actions.move_to_element(driver.find_element_by_css_selector(cssSelector)).send_keys(msg).key_down(Keys.RETURN).key_up(Keys.RETURN).perform()
 
